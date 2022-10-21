@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_13_143700) do
+ActiveRecord::Schema.define(version: 2021_05_13_172112) do
 
   create_table "orders", force: :cascade do |t|
     t.string "customer_name", null: false
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_05_13_143700) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "supplier_id"
     t.string "supplier_reference"
+    t.string "state", default: "pending"
     t.index ["product_id"], name: "index_orders_on_product_id"
     t.index ["supplier_id"], name: "index_orders_on_supplier_id"
   end
